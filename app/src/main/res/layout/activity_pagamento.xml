@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundvk"
+    android:fillViewport="true"
+
+    android:focusable="auto"
+    tools:context=".principal.ui.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/progress_pagamento"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#99000000"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminate="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Toolbar
+            android:id="@+id/toolbar_adm"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="81dp"
+            android:layout_height="34dp"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar_adm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logoarenaplan" />
+
+        <TextView
+            android:id="@+id/textViewopcoescaixa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:text="PAGAMENTO"
+            android:textColor="#2E7D32"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            tools:text="  Pagamento" />
+
+        <TextView
+            android:id="@+id/textViewHoraPagamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Hora"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewopcoescaixa"
+            app:layout_constraintStart_toEndOf="@+id/textViewopcoescaixa"
+            app:layout_constraintTop_toTopOf="@+id/textViewopcoescaixa"
+            tools:text="12/05/2021\n11:00:01" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/menutela"
+            android:onClick="showPopup"
+            android:src="@drawable/debit_card_icon2"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewHoraPagamento"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewHoraPagamento" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="214dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#8FF379"
+            android:focusable="auto"
+            android:focusableInTouchMode="true"
+            android:text="Resumo da Compra"
+            android:textColor="#F8000000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/toolbar_adm"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_adm" />
+
+        <TextView
+            android:id="@+id/usuarioTexto"
+            android:layout_width="179dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#8FF379"
+            android:ems="10"
+            android:inputType="number"
+            android:singleLine="false"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            tools:text="             Descontos" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonCredito"
+            app:layout_constraintStart_toStartOf="@+id/toolbar_adm"
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+
+            <TextView
+                android:id="@+id/labelSubTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Sub Total: "
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/labelValorSubTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/labelSubTotal"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="R$ 200,00" />
+
+            <TextView
+                android:id="@+id/labelDesconto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Desconto: "
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/labelSubTotal" />
+
+            <TextView
+                android:id="@+id/labelValorDesconto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/labelDesconto"
+                app:layout_constraintTop_toBottomOf="@+id/labelValorSubTotal"
+                tools:text="R$ 200,00" />
+
+            <TextView
+                android:id="@+id/labelLiquido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Liquido: "
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/labelDesconto" />
+
+            <TextView
+                android:id="@+id/labelValorLiquido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/labelValorDesconto"
+                app:layout_constraintTop_toBottomOf="@+id/labelValorDesconto"
+                tools:text="R$ 200,00" />
+
+            <TextView
+                android:id="@+id/textDesconto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="Valor:    R$"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/edValorDescontoDigitado"
+                app:layout_constraintStart_toEndOf="@+id/labelValorSubTotal"
+                app:layout_constraintTop_toTopOf="@+id/edValorDescontoDigitado" />
+
+            <EditText
+                android:id="@+id/edValorDescontoDigitado"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:focusableInTouchMode="true"
+                android:inputType="numberDecimal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textDesconto"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Perc.:     %"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/labelLiquido"
+                app:layout_constraintStart_toStartOf="@+id/textDesconto"
+                app:layout_constraintTop_toBottomOf="@+id/textDesconto" />
+
+            <EditText
+                android:id="@+id/edPercentualDesconto"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                app:layout_constraintBottom_toBottomOf="@+id/textView15"
+                app:layout_constraintEnd_toEndOf="@+id/edValorDescontoDigitado"
+                app:layout_constraintStart_toEndOf="@+id/textView15"
+                app:layout_constraintTop_toTopOf="@+id/textView15" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <Button
+            android:id="@+id/botaoDinheiro"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="128dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_corner"
+            android:drawableTop="@drawable/money_paper_icon_48px"
+            android:insetLeft="1dp"
+            android:insetTop="7dp"
+            android:text="Dinheiro"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:backgroundTint="#4CAF50"
+            app:elevation="2dp"
+            app:iconTint="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:strokeColor="#070707"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/buttonCredito"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="128dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="32dp"
+            android:drawableTop="@drawable/credit_card_visa_icon_157725"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:text="Crédito"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:backgroundTint="#0697F8"
+            app:iconTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/botaoDinheiro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/botaoDinheiro"
+            app:layout_constraintTop_toTopOf="@+id/botaoDinheiro"
+            app:strokeColor="#F9A825" />
+
+        <Button
+            android:id="@+id/buttonDebito"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="128dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="2dp"
+            android:drawableTop="@drawable/debit_card_icon"
+            android:insetLeft="1dp"
+            android:insetTop="7dp"
+            android:text="Débito"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:backgroundTint="#74BFF1"
+            app:elevation="2dp"
+            app:iconTint="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/botaoDinheiro"
+            app:layout_constraintTop_toBottomOf="@+id/botaoDinheiro"
+            app:strokeColor="#F9A825" />
+
+        <Button
+            android:id="@+id/buttonVoucher"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="128dp"
+            android:layout_height="95dp"
+            android:drawableTop="@drawable/restaurant_icon_48px"
+            android:insetLeft="1dp"
+            android:insetTop="7dp"
+            android:text="Voucher"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:backgroundTint="#0697F8"
+            app:iconTint="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/buttonCredito"
+            app:layout_constraintTop_toTopOf="@+id/buttonDebito"
+            app:strokeColor="#F9A825" />
+
+        <Button
+            android:id="@+id/buttonCheque"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="128dp"
+            android:layout_height="95dp"
+            android:drawableTop="@drawable/check_payments_icon_48px"
+            android:insetLeft="1dp"
+            android:insetTop="7dp"
+            android:text="Cheque"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:backgroundTint="#F37D59"
+            app:elevation="2dp"
+            app:iconTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonPrePago"
+            app:layout_constraintStart_toStartOf="@+id/buttonDebito"
+            app:layout_constraintTop_toTopOf="@+id/buttonPrePago"
+            app:strokeColor="#F9A825" />
+
+        <Button
+            android:id="@+id/buttonPrePago"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="128dp"
+            android:layout_height="95dp"
+            android:drawableTop="@drawable/rfidsign_2"
+            android:insetLeft="1dp"
+            android:insetTop="7dp"
+            android:text="Pré-pago"
+            android:textSize="14sp"
+            android:visibility="visible"
+            android:enabled="false"
+            app:backgroundTint="#ED47C304"
+            app:iconTint="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/buttonVoucher"
+            app:layout_constraintStart_toStartOf="@+id/buttonVoucher"
+            app:layout_constraintTop_toBottomOf="@+id/buttonVoucher"
+            app:strokeColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/buttonPix"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="128dp"
+            android:layout_height="95dp"
+            android:drawableTop="@drawable/qrcode_display_interface_icon_32px"
+            android:insetLeft="1dp"
+            android:insetTop="7dp"
+            android:text="PIX"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:backgroundTint="#E66A44"
+            app:elevation="2dp"
+            app:iconTint="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/buttonCheque"
+            app:layout_constraintTop_toBottomOf="@+id/buttonCheque"
+            app:strokeColor="#F9A825" />
+
+
+        <!--android:drawableTop="@drawable/qrcode_display_interface_icon_32px"-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

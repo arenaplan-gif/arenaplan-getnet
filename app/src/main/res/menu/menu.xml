@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".principal.ui.MainActivity">
+
+    <item
+        android:id="@+id/estorno"
+        android:orderInCategory="300"
+        android:icon="@drawable/adm"
+        android:title="Estorno de Transação"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/reimprimir"
+        android:orderInCategory="300"
+        android:icon="@drawable/adm"
+        android:title="Reimprime Transação"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/infos"
+        android:orderInCategory="300"
+        android:icon="@drawable/adm"
+        android:title="Informações"
+        app:showAsAction="ifRoom"></item>
+    <item
+        android:id="@+id/status"
+        android:orderInCategory="300"
+        android:icon="@drawable/adm"
+        android:title="Status"
+        app:showAsAction="ifRoom"></item>
+
+
+</menu>

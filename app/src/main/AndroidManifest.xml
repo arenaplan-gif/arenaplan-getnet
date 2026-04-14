@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.arenaplan.pdv.get">
+    <queries><package android:name="com.getnet.posdigital.service" /></queries>
+    <uses-permission android:name="com.getnet.posdigital.service.POSDIGITAL" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
+    <uses-permission android:name="br.com.getnet.getstore.provider.READ_DICTIONARY"/>
+    <application
+        android:name=".ArenaplanPdvApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:screenOrientation="portrait"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ArenaplanPDV"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:theme">
+        <activity
+            android:name=".principal.ui.MainActivity"
+            android:screenOrientation="portrait"
+
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:exported="true" />
+
+        <activity android:name=".login.LoginActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".busca.LayoutActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".pagamento.PagamentoActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".opcoes.OpcoesActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".pedidos.PedidosActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".pedidos.dialog.MostraInformacoesPedido"
+            android:resizeable="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".setup.ui.SetUpActivity"
+            android:screenOrientation="portrait"
+           />
+
+        <activity android:name=".caixa.OpcoesCaixaActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".splash.SplashActivity"
+           android:screenOrientation="portrait"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".categoria.ProdutoCategoriaActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity android:name=".categoria.CatalogoActivity" android:screenOrientation="portrait" android:exported="false" />
+
+    </application>
+</manifest>

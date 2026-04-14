@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.arenaplan.pdv.get",
+  "variantName": "debug",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 213,
+      "versionName": "213",
+      "outputFile": "app-debug.apk"
+    }
+  ],
+  "elementType": "File"
+}
