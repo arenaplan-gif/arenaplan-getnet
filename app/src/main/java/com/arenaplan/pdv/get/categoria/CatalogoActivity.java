@@ -184,7 +184,10 @@ public class CatalogoActivity extends AppCompatActivity {
                     InserePedidoCard inserePedidoCard = response.body();
                     InserePedido p = inserePedidoCard.getInserePedido();
                     if (p != null && CODIGO_SUCESSO.equalsIgnoreCase(p.getError_code())) {
-                        AbreTelaResumoPedidoMesa(menumero, nome);
+                        if(response.body().getInserePedido().getApelido()!="")
+                           AbreTelaResumoPedidoMesa(menumero, response.body().getInserePedido().getApelido());
+                        else
+                            AbreTelaResumoPedidoMesa(menumero, nome);
                     } else {
                         alerta("Erro na resposta do servidor");
                     }

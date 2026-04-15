@@ -21,8 +21,8 @@ public class InserePedido implements Parcelable {
     protected InserePedido(Parcel in) {
         tr_id = in.readString();
         version = in.readString();
-        apelido= in.readString();
         error_code = in.readString();
+        apelido= in.readString();
     }
 
     public static final Creator<InserePedido> CREATOR = new Creator<InserePedido>() {
@@ -79,7 +79,7 @@ public class InserePedido implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(tr_id);
         dest.writeString(version);
-        dest.writeString(apelido);
         dest.writeString(error_code);
+        dest.writeString(apelido);
     }
 }
